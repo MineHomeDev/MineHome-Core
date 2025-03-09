@@ -44,6 +44,6 @@ jobs:
         with:
          name: "Release v${{ env.VERSION }}"
          tag_name: "v${{ env.VERSION }}"
-         files: target/*-with-dependencies.jar
+         files: target/MineHome-Core-${{ env.VERSION }}.jar
          token: ${{ secrets.GH_TOKEN }}
          prerelease: true
