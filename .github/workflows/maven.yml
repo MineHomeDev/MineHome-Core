@@ -44,6 +44,6 @@ jobs:
         with:
          name: "Release v${{ env.VERSION }}"
          tag_name: "v${{ env.VERSION }}"
-         files: target/*.jar
+         files: target/*-with-dependencies.jar
          token: ${{ secrets.GH_TOKEN }}
          prerelease: true
