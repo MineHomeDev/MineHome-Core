@@ -36,17 +36,14 @@ jobs:
         id: find_jar
         run: echo "JAR_PATH=$(find target -name '*.jar' | head -n 1)" >> $GITHUB_ENV
 
-      - name: Get Version
-        id: version
-        run: echo "VERSION=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+      - name: Get version from pom.xml
+        run: echo "VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ env.JAR_PATH }}
-          token: ${{ secrets.GH_TOKEN }}
-          tag_name: v${{ env.VERSION }}
-          release_name: "Dev ${{ env.VERSION }}"
-          body: "Automatisch gebautes Release."
-          draft: false
-          prerelease: false
+         name: "Release v${{ env.VERSION }}"
+         tag_name: "v${{ env.VERSION }}"
+         files: target/*.jar
+         token: ${{ secrets.GH_TOKEN }}
+         prerelease: true
