@@ -1,0 +1,7 @@
+name: MineHome-Core
+version: '1.0.0'
+main: eu.minehome.mineHomeCore.MineHomeCore
+api-version: '1.20'
+load: STARTUP
+authors: [ MineHome ]
+website: minehome.eu
