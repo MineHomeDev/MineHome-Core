@@ -3,14 +3,14 @@ package eu.minehome.mineHomeCore.listener;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 @SuppressWarnings("deprecation")
-public class JoinEvent implements Listener {
+public class QuitEvent implements Listener {
 
     @EventHandler
-    public void OnJoinEvent(PlayerJoinEvent event) {
+    public void OnQuitEvent(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        event.setJoinMessage(null);
+        event.setQuitMessage(null);
     }
 }
