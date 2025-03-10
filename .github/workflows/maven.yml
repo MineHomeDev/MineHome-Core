@@ -46,4 +46,4 @@ jobs:
          tag_name: "v${{ env.VERSION }}"
          files: target/MineHome-Core-${{ env.VERSION }}.jar
          token: ${{ secrets.GH_TOKEN }}
-         prerelease: true
+         prerelease: false
