@@ -3,7 +3,7 @@ name: Build and Release Minecraft Plugin
 on:
   push:
     branches:
-      - Dev  # Ändere den Branch-Namen, falls nötig
+      - release  # Ändere den Branch-Namen, falls nötig
   workflow_dispatch:  # Manuelles Triggern möglich
 
 jobs:
